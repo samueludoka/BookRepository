@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AddBookResponse {
-    private String message;
+public class BookResponse {
+    private Long id;
 }

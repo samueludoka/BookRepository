@@ -1,8 +1,9 @@
 package org.applicationsmart.services;
 
-import org.applicationsmart.dtos.request.AddBookRequest;
-import org.applicationsmart.dtos.response.AddBookResponse;
+import org.applicationsmart.data.model.Book;
+import org.applicationsmart.dtos.request.BookRequest;
+import org.applicationsmart.dtos.response.BookResponse;
 
-public interface AddBookService {
-    AddBookResponse fetchBook(AddBookRequest addBookRequest);
+public interface BookService {
+    void fetchBook(BookRequest bookRequest);
 }

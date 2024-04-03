@@ -1,12 +1,11 @@
 package org.applicationsmart.dtos.request;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class AddBookRequest {
+public class BookRequest {
     private String bookTitle;
     private String urlAddress;
 }
