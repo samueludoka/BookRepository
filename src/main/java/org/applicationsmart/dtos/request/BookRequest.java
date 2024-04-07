@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BookRequest {
-    private String bookTitle;
-    private String urlAddress;
+//    private String bookTitle;
+//    private String urlAddress;
 }
