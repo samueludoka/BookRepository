@@ -3,6 +3,7 @@ package org.applicationsmart.services;
 import org.applicationsmart.data.model.Book;
 import org.applicationsmart.data.model.GuntendexBook;
 import org.applicationsmart.data.repository.BookSearchRepository;
+import org.applicationsmart.exceptions.BookDoesNotExistException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,8 +14,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest
@@ -28,13 +28,11 @@ public class GutendexBookSearchServiceTest {
 
     @Test
     public void fetchFromApiTest() throws URISyntaxException {
-        Path guntendexBook = gutendexBookService.findBook("frankenstein");
+        GuntendexBook guntendexBook = gutendexBookService.findBook2("frankenstein");
         assertNotNull(guntendexBook);
 
-
-//        String encodedSearchQuery = URLEncoder.encode("Frankenstein", StandardCharsets.UTF_8);
-//        String uriString = "https://gutendex.com/books?search=" + encodedSearchQuery;
-//        URI uri = new URI(uriString);
-
+    } @Test
+    public void fetchForBookNotFoundTest() throws URISyntaxException {
+        assertThrows(BookDoesNotExistException.class, () -> gutendexBookService.findBook2("wrongbook"));
     }
 }

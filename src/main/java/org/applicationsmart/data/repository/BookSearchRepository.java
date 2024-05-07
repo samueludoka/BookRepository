@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BookSearchRepository extends JpaRepository<Book, Long> {
 
-    Book findBookByBookTitle(String title);
+    Book findBookByTitle(String title);
 }

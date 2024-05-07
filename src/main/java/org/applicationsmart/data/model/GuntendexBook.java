@@ -12,16 +12,10 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @ToString
 @Getter
 @Setter
-@Entity
 public class GuntendexBook {
-    @Id
-    @GeneratedValue(strategy =IDENTITY)
     private String title;
-    @OneToMany
     private List<Author> authors;
     private String copyright;
-    @OneToMany
-    private List<Language> languages;
-    @OneToMany
-    private List<Book> books;
+    private List<String> languages;
+    private List<String> subjects;
 }

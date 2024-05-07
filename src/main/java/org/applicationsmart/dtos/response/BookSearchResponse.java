@@ -14,5 +14,5 @@ public class BookSearchResponse {
     private int count;
     private String next;
     private String previous;
-//    private List<GuntendexBook> results;
+    private List<GuntendexBook> results;
 }

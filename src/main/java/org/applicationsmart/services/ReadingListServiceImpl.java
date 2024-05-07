@@ -19,9 +19,9 @@ public class ReadingListServiceImpl implements ReadingListService{
 
     @Override
     public void AddBookToList(String title) throws URISyntaxException {
-        GuntendexBook book = (GuntendexBook) gutendexBookService.findBook(title);
-        Book book1 = modelMapper.map(book,Book.class);
-
-        bookSearchService.save(book1);
+//        GuntendexBook book = (GuntendexBook) gutendexBookService.findBook(title);
+//        Book book1 = modelMapper.map(book,Book.class);
+//
+//        bookSearchService.save(book1);
     }
 }
